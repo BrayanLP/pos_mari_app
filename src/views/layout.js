@@ -1,30 +1,25 @@
 import React from 'react';
-
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Report from './report';
 import Products from './products';
 import ReportDay from './reportDay';
 import TopProducts from './topProducts';
-
 const Drawer = createDrawerNavigator();
-
 
 function Layout (){
 
   return (
     <Drawer.Navigator
     screenOptions={{
-      drawerStyle: {
-        // backgroundColor: 'red',
-        width: 240,
+      drawerStyle: { 
+        
       },
       drawerActiveBackgroundColor:'#009DAE',
       drawerActiveTintColor: 'white',
-      drawerLabelStyle:'red',
-      // drawerItemStyle: 'white',
+      // drawerLabelStyle:'red', 
       drawerContentStyle: 'purple',
       drawerContentContainerStyle: 'green',
-      drawerInactiveBackgroundColor: 'red'
+      // drawerInactiveBackgroundColor: 'red'
     }}
     >
 

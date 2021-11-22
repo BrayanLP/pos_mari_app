@@ -1,14 +1,6 @@
 import React from "react";
 import { StyleSheet, View, ScrollView, FlatList } from "react-native";
-
-import { 
-  DataTable,
-  Title,
-  Paragraph,
-  Avatar
-  
-} from "react-native-paper";
- 
+import {  DataTable, Title, Paragraph, Avatar } from "react-native-paper";
 const optionsPerPage = [2, 3, 4];
 const dataList = [
   {
@@ -29,16 +21,15 @@ const dataList = [
     mount: 'S/30.00',
     bg: "#34BE82"
   }
-]
+];
+
 export default function ReportDay() {
   
   const [page, setPage] = React.useState(0);
   const [itemsPerPage, setItemsPerPage] = React.useState(optionsPerPage[0]);
-
   React.useEffect(() => {
     setPage(0);
   }, [itemsPerPage]);
-
 
   const renderItem = ({ item }) => (
     <View style={[styles.card, {backgroundColor: item.bg}]} >
@@ -70,13 +61,11 @@ export default function ReportDay() {
         </FlatList> 
         <View>
           <Title style={{ paddingHorizontal: 10 }}>Lista de productos:</Title>
-
           <DataTable>
             <DataTable.Header>
               <DataTable.Title>Producto</DataTable.Title>
               <DataTable.Title numeric>Precio</DataTable.Title> 
             </DataTable.Header>
-
             {new Array(20).fill({}).map(function (e, i) {
               return (
                 <DataTable.Row key={i + 1}>
@@ -85,12 +74,10 @@ export default function ReportDay() {
                 </DataTable.Row>
               );
             })}
-
             <DataTable.Pagination
               page={page}
               numberOfPages={100}
               onPageChange={(page) => setPage(page)}
-              
             />
           </DataTable>
         </View>

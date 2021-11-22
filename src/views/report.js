@@ -1,45 +1,14 @@
 import React from "react";
-import { StyleSheet, View, Image, Dimensions } from "react-native";
+import { StyleSheet, View, Dimensions } from "react-native";
+import {  Title  } from "react-native-paper";
+import { LineChart } from "react-native-chart-kit";
 
-import {
-  TextInput,
-  Title,
-  Button,
-  Snackbar,
-  Banner,
-  Appbar,
-  Text,
-  Drawer,
-} from "react-native-paper";
-
-import {
-  LineChart,
-  BarChart,
-  PieChart,
-  ProgressChart,
-  ContributionGraph,
-  StackedBarChart,
-} from "react-native-chart-kit";
-
-const chartConfig = {
-  backgroundGradientFrom: "#1E2923",
-  backgroundGradientFromOpacity: 0,
-  backgroundGradientTo: "#08130D",
-  backgroundGradientToOpacity: 0.5,
-  color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
-  strokeWidth: 2, // optional, default 3
-  barPercentage: 0.5,
-  useShadowColorFromDataset: false, // optional
-};
-
-export default function Report() {
-  
-  const width = Dimensions.get("window").width ; 
+export default function Report() {  
+  const width = Dimensions.get("window").width; 
 
   return (
     <View style={styles.container}>
       <Title>Últimos 6 meses</Title>
-
       <View style={styles.bg}> 
         <View>
           <LineChart
@@ -81,7 +50,6 @@ export default function Report() {
             yAxisInterval={1} 
           />
         </View>
-         
       </View>
     </View>
   );
@@ -99,9 +67,6 @@ const styles = StyleSheet.create({
   bg: {
     backgroundColor: "#fff",
     borderRadius: 4,
-    overflow: "hidden",
-    // paddingBottom: 20,
-    // paddingHorizontal: 10,
-    // paddingVertical: 10,
+    overflow: "hidden", 
   },
 });

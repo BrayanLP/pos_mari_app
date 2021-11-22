@@ -4,15 +4,12 @@ import { StyleSheet, View } from "react-native";
 import { useTheme } from 'react-native-paper'; 
 import { TextInput, Title, Button, Snackbar  } from "react-native-paper";
 import routes from "utils/router";
-
 export default function LoginComponent({navigation}){
   const [text, setText] = React.useState('');
-
   const { colors } = useTheme(); 
   const [visible, setVisible] = React.useState(false); 
   const onToggleSnackBar = () => setVisible(!visible);
   const onDismissSnackBar = () => setVisible(false);
-
 
   return (
    

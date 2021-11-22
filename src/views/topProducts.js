@@ -1,18 +1,7 @@
 import React from "react";
-import { StyleSheet, View, Image, Dimensions } from "react-native";
-
-import {
-  TextInput,
-  Title,
-  Button,
-  Snackbar,
-  Banner,
-  Appbar,
-  Text,
-  Drawer,
-} from "react-native-paper";
-
-import { LineChart, PieChart } from "react-native-chart-kit";
+import { StyleSheet, View, Dimensions } from "react-native";
+import { Title } from "react-native-paper";
+import { PieChart } from "react-native-chart-kit";
 
 const data = [
   {
@@ -54,11 +43,9 @@ const data = [
 
 export default function TopProducts() {
   const width = Dimensions.get("window").width - 30;
-
   return (
     <View style={styles.container}>
       <Title>Producto más vendido</Title>
-
       <View style={styles.bg}>
         <View>
           <PieChart
@@ -66,28 +53,13 @@ export default function TopProducts() {
             width={width}
             height={220}
             chartConfig={
-              {
-                // backgroundColor: "#0081ca",
-                // backgroundGradientFrom: "#0081ca",
-                // backgroundGradientTo: "#0081ca",
-                // decimalPlaces: 2, // optional, defaults to 2dp
-                color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                // labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                // style: {
-                //   borderRadius: 16,
-                // },
-                // propsForDots: {
-                //   r: "6",
-                //   strokeWidth: "2",
-                //   stroke: "#0081ca",
-                // },
+              { 
+                color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`, 
               }
             }
             accessor={"population"}
             backgroundColor={"transparent"}
-            paddingLeft={"12"}
-            // center={[10, 50]}
-            // absolute
+            paddingLeft={"12"} 
           />
         </View>
       </View>
@@ -107,9 +79,6 @@ const styles = StyleSheet.create({
   bg: {
     backgroundColor: "#fff",
     borderRadius: 4,
-    overflow: "hidden",
-    // paddingBottom: 20,
-    // paddingHorizontal: 10,
-    // paddingVertical: 10,
+    overflow: "hidden", 
   },
 });
